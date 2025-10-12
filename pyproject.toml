@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "jobseek"
+version = "0.1.0"
+description = "JobSeek - modular job scraper (MVP)"
+authors = ["tsh39 <>"]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+httpx = "^0.25"
+pydantic = "^2.6"
+typer = "^0.9"
+yaml = "^6.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^8.4"
+ruff = "^0.16"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
