@@ -13,8 +13,9 @@ class Job:
     location: Optional[str]
     description: Optional[str]
     url: str
-    posted_at: Optional[datetime]
+    release_date: Optional[datetime]
     experience_level: Optional[str]
+    salary: Optional[str]
 
 
 class JobSource:
