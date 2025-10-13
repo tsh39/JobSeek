@@ -1,7 +1,7 @@
 import asyncio
 import typer
 from pathlib import Path
-from jobseek.app.config import load_config
+from jobseek.app.config import load_config, Config
 from jobseek.app.pipeline import run_pipeline
 from jobseek.adapters.sources.greenhouse import GreenhouseSource
 from jobseek.adapters.sinks.console import ConsoleSink
@@ -18,7 +18,7 @@ def fetch(
     # only_us: bool = typer.Option(False, help="Filter to US jobs"),
     limit: int = typer.Option(0, help="Fetch at most N jobs (0 = all)"),
 ):
-    cfg = load_config(config) if config else {} # TODO: use cfg in sources/sinks
+    cfg = load_config(config) if config else Config() # TODO: use cfg in sources/sinks
     # board = board or cfg.get("greenhouse", {}).get("board")
     sources = [GreenhouseSource()]
     sinks = [CSVSink(str(csv))] + ([ConsoleSink()] if console else [])
